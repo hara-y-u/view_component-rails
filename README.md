@@ -26,13 +26,21 @@ File structure should be like below:
 
 ```
 app/views/components
-          |-- comment.rb # This is optional
+          |-- comment.rb # optional
           |-- comment
               |-- _show.slim
-              |-- _info.slim
+              |-- _info.slim # used within `_show.slim`
+              |-- show.sass # optional
 ```
 
-Template files sould be normal rails view file:
+And this Component can be rendered in the views:
+
+```slim
+/ app/views/comments/show.slim
+.content= c 'comment', comment: @comment
+```
+
+Template files sould be normal rails view file. Main view file should be named as '_show.{format}':
 
 ```slim
 / app/views/components/comment/_show.slim
@@ -54,7 +62,7 @@ Optionally, you can define ViewModel for the component:
 ```ruby
 # This file is optional!
 # app/views/components/comment.rb
-class ViewComponent::Category
+class ViewComponent
   class Comment < ViewComponent::ViewModel
     def title
       comment.title
@@ -65,4 +73,15 @@ class ViewComponent::Category
     end
   end
 end
+```
+
+And stylesheets:
+
+```sass
+/* This is also optional!!
+/* app/views/components/comment/show.sass
+.comment
+  margin: 0
+  color: #fff
+  background-color: red
 ```

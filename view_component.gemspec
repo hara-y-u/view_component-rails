@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ['yukihiro hara']
   s.email       = ['yukihr@gmail.com']
   s.homepage    = 'https://github.com/yukihr/view_component-rails'
-  s.summary     = 'TODO: Summary of ViewComponent.'
-  s.description = 'TODO: Description of ViewComponent.'
+  s.summary     = 'View component for rails.'
+  s.description = 'View component for rails.'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']

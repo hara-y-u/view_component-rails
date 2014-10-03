@@ -1,14 +1,32 @@
 # view_component-rails - ViewComponent for Rails
 
-_Development is still in alpha phase._
+_WARNING: Development is still in alpha phase._
 
 ## Usage
+
+Gemfile:
+
+```ruby
+gem 'view_component-rails'
+```
+
+Configuration:
+
+```ruby
+# config/initializers/view_component.rb
+# Include helpers you want to use in component templates
+ViewComponent.add_helper FontAwesome::Rails::IconHelper
+
+ViewComponent.register 'comment'
+# You can register nested directory:
+# ViewComponent.register 'article/author'
+```
 
 File structure should be like below:
 
 ```
 app/views/components
-          |-- comment.rb
+          |-- comment.rb # This is optional
           |-- comment
               |-- _show.slim
               |-- _info.slim
@@ -16,16 +34,16 @@ app/views/components
 
 Template files sould be normal rails view file:
 
-```
-# app/views/components/comment/_show.slim
+```slim
+/ app/views/components/comment/_show.slim
 .comment
   .comment__title= title
   .comment__body= body
   = render 'info', comment: comment
 ```
 
-```
-# app/views/components/comment/_info.slim
+```slim
+/ app/views/components/comment/_info.slim
 ul.comment__info
   li.comment__info__item= comment.created_at
   li.comment__info__item= comment.user.name

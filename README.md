@@ -1,4 +1,4 @@
-# view_component-rails - ViewComponent for Rails [![Gem Version](https://badge.fury.io/rb/view_component-rails.svg)](http://badge.fury.io/rb/view_component-rails)
+# view_component-rails [![Gem Version](https://badge.fury.io/rb/view_component-rails.svg)](http://badge.fury.io/rb/view_component-rails)
 
 _WARNING: Development is still in alpha phase._
 
